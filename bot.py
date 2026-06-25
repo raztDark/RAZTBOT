@@ -24,10 +24,10 @@ SESS_DIR = DIR / "sessions"
 SESS_DIR.mkdir(exist_ok=True)
 STATE    = DIR / "state.json"
 
-BOT_TOKEN = os.environ["BOT_TOKEN"]
-API_ID    = int(os.environ["API_ID"])
-API_HASH  = os.environ["API_HASH"]
-ADMIN_ID  = int(os.environ["ADMIN_ID"])
+BOT_TOKEN = os.environ["8731566700:AAENWJvaaRz8TDKdiOfCgeHNO6E1AYFTLJs"]
+API_ID    = int(os.environ["32359180"])
+API_HASH  = os.environ["a4eb6c1b5159d7fff13c35f6c737fe73"]
+ADMIN_ID  = int(os.environ["8695826791"])
 
 DURATIONS = {
     "1d":  (86_400,      "1 día"),
