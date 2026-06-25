@@ -1,0 +1,15 @@
+[Unit]
+Description=Promo Bot
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/promobot
+EnvironmentFile=/home/ubuntu/promobot/.env
+ExecStart=/home/ubuntu/promobot/venv/bin/python bot.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
