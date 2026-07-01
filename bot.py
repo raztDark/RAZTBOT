@@ -87,8 +87,8 @@ def user_kb(u: dict) -> KB:
 
 def admin_kb() -> KB:
     return KB([
-        [B("🔑 Key 1 día", callback_data="ak_1d"), B("🔑 Key 1 semana", callback_data="ak_7d"),
-         B("🔑 Key 1 mes", callback_data="ak_30d")],
+        [B("🥀 KEY 1 DIA", callback_data="ak_1d"), B("🫪 KEY 1 SEMANA", callback_data="ak_7d"),
+         B("💎 KEY 1 MES", callback_data="ak_30d")],
         [B("👥 Ver usuarios", callback_data="a_users")],
     ])
 
@@ -99,7 +99,7 @@ async def show_user_menu(msg, uid: int, txt: str = ""):
     if not key_ok(u):
         await msg.reply_text("⏰ Tu clave ha expirado. Contacta al administrador.")
         return
-    text = txt or f"🤖 *Promo Bot*\n👤 {u.get('auth_name','?')}\n\nElige una opción:"
+    text = txt or f"🤖 DARK BOT*\n👤 {u.get('auth_name','?')}\n\nElige una opción:"
     await msg.reply_text(text, reply_markup=user_kb(u), parse_mode="Markdown")
 
 async def show_admin_menu(msg, txt: str = ""):
@@ -250,9 +250,9 @@ async def on_cb(upd: Update, ctx: ContextTypes.DEFAULT_TYPE):
             s["keys"][key] = exp
             save(s)
             await q.edit_message_text(
-                f"🔑 *Key nueva — {lbl}*\n\n`{key}`\n\nVence: {fmt_date(exp)}",
+                f"🔑 *KEY GENERADA — {lbl}*\n\n`{key}`\nEXPIRA: {fmt_date(exp)}",
                 parse_mode="Markdown",
-                reply_markup=KB([[B("⬅️ Admin", callback_data="a_menu")]]))
+                reply_markup=KB([[B("⬅️ REGRESAR", callback_data="a_menu")]]))
 
         elif data == "a_users":
             s    = load()
